@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferienhaus in Norwegen – Sehenswürdigkeiten</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/5/56/Naeroyfjord_Norway_2014.jpg') center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+        }
+        header h1 {
+            font-size: 2.5em;
+        }
+        nav {
+            background-color: #004080;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #0066cc;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #004080;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #0066cc;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Willkommen im Ferienhaus Fjordblick</h1>
+</header>
+
+<nav>
+    <a href="#start">Start</a>
+    <a href="#ziele">Sehenswürdigkeiten</a>
+    <a href="#karte">Karte</a>
+    <a href="#kontakt">Kontakt</a>
+</nav>
+
+<div class="container" id="start">
+    <h2>Entdecke Norwegen</h2>
+    <p>Hier findest du unsere liebsten Ausflugsziele rund um das Ferienhaus Fjordblick. Klicke auf „Route starten“, um direkt die Navigation zu öffnen.</p>
+</div>
+
+<div class="container" id="ziele">
+    <h2>Sehenswürdigkeiten in der Nähe</h2>
+
+    <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Trolltunga_2018.jpg" alt="Trolltunga">
+        <h3>Trolltunga</h3>
+        <p>Spektakulärer Felsvorsprung mit atemberaubender Aussicht. Eine anspruchsvolle Wanderung, die sich lohnt!</p>
+        <p><strong>Entfernung:</strong> ca. 120 km</p>
+        <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=60.1240,6.7386">Route starten</a>
+    </div>
+
+    <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/V%C3%B8ringsfossen_2010.jpg" alt="Vøringsfossen Wasserfall">
+        <h3>Vøringsfossen Wasserfall</h3>
+        <p>Einer der bekanntesten Wasserfälle Norwegens mit einer Fallhöhe von 182 Metern.</p>
+        <p><strong>Entfernung:</strong> ca. 85 km</p>
+        <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=60.4262,7.2505">Route starten</a>
+    </div>
+
+    <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Bergen_view_from_Floyen.jpg" alt="Bergen">
+        <h3>Bergen</h3>
+        <p>Charmante Hafenstadt mit bunten Häusern, Fischmarkt und der berühmten Fløibanen-Seilbahn.</p>
+        <p><strong>Entfernung:</strong> ca. 200 km</p>
+        <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=60.3913,5.3221">Route starten</a>
+    </div>
+</div>
+
+<div class="container" id="karte">
+    <h2>Alle Ziele auf der Karte</h2>
+    <iframe src="https://www.google.com/maps/d/embed?mid=1aBcDeFgHiJKlMnOpQRsTUVwxYZ&hl=de"></iframe>
+    <p style="font-size: 0.9em; color: #555;">Tipp: Du kannst deine eigene Karte mit Google My Maps erstellen und hier einbinden.</p>
+</div>
+
+<div class="container" id="kontakt">
+    <h2>Kontakt & Buchung</h2>
+    <p>Die Buchung erfolgt über unsere Vermittlungsseite:</p>
+    <a class="btn" target="_blank" href="https://www.deine-ferienhausvermittlung.de">Zur Buchung</a>
+</div>
+
+</body>
+</html>
