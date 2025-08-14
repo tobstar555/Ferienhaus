@@ -63,13 +63,28 @@
         color: white;
         border-radius: 5px;
         text-decoration: none;
+        margin-top: 5px;
     }
     .btn:hover {
         background-color: #0066cc;
     }
+    .social-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 15px;
+        background-color: #eee;
+        border-radius: 5px;
+        text-decoration: none;
+        color: black;
+        margin: 5px 5px 5px 0;
+    }
+    .social-btn img {
+        height: 20px;
+    }
     iframe {
         width: 100%;
-        height: 500px;
+        height: 600px;
         border: none;
         border-radius: 10px;
     }
@@ -85,8 +100,8 @@
     <a href="#start" id="navStart">Start</a>
     <a href="#ziele" id="navZiele">Sehenswürdigkeiten</a>
     <a href="#karte" id="navKarte">Karte</a>
+    <a href="#social" id="navSocial">Social Media</a>
     <a href="#buchung" id="navBuchung">Buchung</a>
-    <a href="#links" id="navLinks">Links</a>
     <select id="languageSwitcher">
         <option value="de">DE</option>
         <option value="en">EN</option>
@@ -102,13 +117,131 @@
 <!-- Sehenswürdigkeiten -->
 <div class="container" id="ziele">
     <h2 id="zieleTitle">Sehenswürdigkeiten in der Nähe</h2>
-    <div id="attractions"></div>
+
+    <!-- 15 Ziele -->
+    <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Trolltunga_2018.jpg" alt="Trolltunga">
+        <h3 id="ziel1Title">Trolltunga</h3>
+        <p id="ziel1Text">Spektakulärer Felsvorsprung mit atemberaubender Aussicht.</p>
+        <p><strong id="dist1Label">Entfernung:</strong> ca. 120 km</p>
+        <a class="btn" target="_blank" href="#" id="route1">Route starten</a>
+    </div>
+    <div class="card">
+        <img src="#" alt="Ziel2">
+        <h3 id="ziel2Title">Ziel 2</h3>
+        <p id="ziel2Text">Beschreibung von Ziel 2</p>
+        <p><strong id="dist2Label">Entfernung:</strong> - km</p>
+        <a class="btn" target="_blank" href="#" id="route2">Route starten</a>
+    </div>
+    <div class="card">
+        <img src="#" alt="Ziel3">
+        <h3 id="ziel3Title">Ziel 3</h3>
+        <p id="ziel3Text">Beschreibung von Ziel 3</p>
+        <p><strong id="dist3Label">Entfernung:</strong> - km</p>
+        <a class="btn" target="_blank" href="#" id="route3">Route starten</a>
+    </div>
+    <div class="card">
+        <img src="#" alt="Ziel4">
+        <h3 id="ziel4Title">Ziel 4</h3>
+        <p id="ziel4Text">Beschreibung von Ziel 4</p>
+        <p><strong id="dist4Label">Entfernung:</strong> - km</p>
+        <a class="btn" target="_blank" href="#" id="route4">Route starten</a>
+    </div>
+    <div class="card">
+        <img src="#" alt="Ziel5">
+        <h3 id="ziel5Title">Ziel 5</h3>
+        <p id="ziel5Text">Beschreibung von Ziel 5</p>
+        <p><strong id="dist5Label">Entfernung:</strong> - km</p>
+        <a class="btn" target="_blank" href="#" id="route5">Route starten</a>
+    </div>
+    <div class="card">
+        <img src="#" alt="Ziel6">
+        <h3 id="ziel6Title">Ziel 6</h3>
+        <p id="ziel6Text">Beschreibung von Ziel 6</p>
+        <p><strong id="dist6Label">Entfernung:</strong> - km</p>
+        <a class="btn" target="_blank" href="#" id="route6">Route starten</a>
+    </div>
+    <div class="card">
+        <img src="#" alt="Ziel7">
+        <h3 id="ziel7Title">Ziel 7</h3>
+        <p id="ziel7Text">Beschreibung von Ziel 7</p>
+        <p><strong id="dist7Label">Entfernung:</strong> - km</p>
+        <a class="btn" target="_blank" href="#" id="route7">Route starten</a>
+    </div>
+    <div class="card">
+        <img src="#" alt="Ziel8">
+        <h3 id="ziel8Title">Ziel 8</h3>
+        <p id="ziel8Text">Beschreibung von Ziel 8</p>
+        <p><strong id="dist8Label">Entfernung:</strong> - km</p>
+        <a class="btn" target="_blank" href="#" id="route8">Route starten</a>
+    </div>
+    <div class="card">
+        <img src="#" alt="Ziel9">
+        <h3 id="ziel9Title">Ziel 9</h3>
+        <p id="ziel9Text">Beschreibung von Ziel 9</p>
+        <p><strong id="dist9Label">Entfernung:</strong> - km</p>
+        <a class="btn" target="_blank" href="#" id="route9">Route starten</a>
+    </div>
+    <div class="card">
+        <img src="#" alt="Ziel10">
+        <h3 id="ziel10Title">Ziel 10</h3>
+        <p id="ziel10Text">Beschreibung von Ziel 10</p>
+        <p><strong id="dist10Label">Entfernung:</strong> - km</p>
+        <a class="btn" target="_blank" href="#" id="route10">Route starten</a>
+    </div>
+    <div class="card">
+        <img src="#" alt="Ziel11">
+        <h3 id="ziel11Title">Ziel 11</h3>
+        <p id="ziel11Text">Beschreibung von Ziel 11</p>
+        <p><strong id="dist11Label">Entfernung:</strong> - km</p>
+        <a class="btn" target="_blank" href="#" id="route11">Route starten</a>
+    </div>
+    <div class="card">
+        <img src="#" alt="Ziel12">
+        <h3 id="ziel12Title">Ziel 12</h3>
+        <p id="ziel12Text">Beschreibung von Ziel 12</p>
+        <p><strong id="dist12Label">Entfernung:</strong> - km</p>
+        <a class="btn" target="_blank" href="#" id="route12">Route starten</a>
+    </div>
+    <div class="card">
+        <img src="#" alt="Ziel13">
+        <h3 id="ziel13Title">Ziel 13</h3>
+        <p id="ziel13Text">Beschreibung von Ziel 13</p>
+        <p><strong id="dist13Label">Entfernung:</strong> - km</p>
+        <a class="btn" target="_blank" href="#" id="route13">Route starten</a>
+    </div>
+    <div class="card">
+        <img src="#" alt="Ziel14">
+        <h3 id="ziel14Title">Ziel 14</h3>
+        <p id="ziel14Text">Beschreibung von Ziel 14</p>
+        <p><strong id="dist14Label">Entfernung:</strong> - km</p>
+        <a class="btn" target="_blank" href="#" id="route14">Route starten</a>
+    </div>
+    <div class="card">
+        <img src="#" alt="Ziel15">
+        <h3 id="ziel15Title">Ziel 15</h3>
+        <p id="ziel15Text">Beschreibung von Ziel 15</p>
+        <p><strong id="dist15Label">Entfernung:</strong> - km</p>
+        <a class="btn" target="_blank" href="#" id="route15">Route starten</a>
+    </div>
 </div>
 
 <!-- Karte -->
 <div class="container" id="karte">
     <h2 id="mapTitle">Alle Ziele auf der Karte</h2>
     <iframe src="https://www.google.com/maps/d/embed?mid=1xqvlbK2Qcq7i4pJgq9pKM_4fEE9yHws&ehbc=2E312F&noprof=1"></iframe>
+</div>
+
+<!-- Social Media Links -->
+<div class="container" id="social">
+    <h2 id="socialTitle">Folge uns</h2>
+    <p id="socialText">Besuche uns auf unseren Social-Media-Kanälen:</p>
+    <a class="social-btn" target="_blank" href="https://facebook.com">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png" alt="Facebook"> Facebook
+    </a>
+    <a class="social-btn" target="_blank" href="https://instagram.com">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
+    </a>
 </div>
 
 <!-- Buchung -->
@@ -119,125 +252,61 @@
 </div>
 
 <script>
-// Zentrale Liste mit allen Sehenswürdigkeiten & Übersetzungen
-const attractionsMaster = [
-    {
-        name: "Trolltunga",
-        img: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Trolltunga_2018.jpg",
-        link: "https://www.google.com/maps/dir/?api=1&destination=60.1240,6.7386",
-        de: { desc: "Spektakulärer Felsvorsprung mit atemberaubender Aussicht.", distance: "Entfernung:", routeBtn: "Route starten" },
-        en: { desc: "Spectacular cliff with breathtaking views.", distance: "Distance:", routeBtn: "Start route" },
-        no: { desc: "Spektakulær klippe med fantastisk utsikt.", distance: "Avstand:", routeBtn: "Start rute" }
-    },
-    {
-        name: "Preikestolen",
-        img: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Preikestolen_Norway_2019.jpg",
-        link: "#",
-        de: { desc: "Bekannte Felsplattform über dem Lysefjord.", distance: "Entfernung:", routeBtn: "Route starten" },
-        en: { desc: "Famous rock platform above the Lysefjord.", distance: "Distance:", routeBtn: "Start route" },
-        no: { desc: "Kjent fjellplattform over Lysefjorden.", distance: "Avstand:", routeBtn: "Start rute" }
-    },
-    {
-        name: "Kjeragbolten",
-        img: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Kjeragbolten_-_Norway_-_2011.jpg",
-        link: "#",
-        de: { desc: "Steinblock zwischen zwei Felsen, beliebtes Fotomotiv.", distance: "Entfernung:", routeBtn: "Route starten" },
-        en: { desc: "Boulder wedged between two cliffs, popular photo spot.", distance: "Distance:", routeBtn: "Start route" },
-        no: { desc: "Stein blokk mellom to fjell, populært fotosted.", distance: "Avstand:", routeBtn: "Start rute" }
-    },
-    // 12 weitere Dummy-Ziele
-    ...Array.from({length: 12}, (_,i) => ({
-        name: `Sehenswürdigkeit ${i+4}`,
-        img: "https://via.placeholder.com/800x500?text=Bild",
-        link: "#",
-        de: { desc: "Beschreibung auf Deutsch.", distance: "Entfernung:", routeBtn: "Route starten" },
-        en: { desc: "Description in English.", distance: "Distance:", routeBtn: "Start route" },
-        no: { desc: "Beskrivelse på norsk.", distance: "Avstand:", routeBtn: "Start rute" }
-    }))
-];
-
-// Titel & Navigation Übersetzungen
 const translations = {
     de: {
         title: "Willkommen im Ferienhaus Lussevika",
         navStart: "Start",
         navZiele: "Sehenswürdigkeiten",
         navKarte: "Karte",
+        navSocial: "Social Media",
         navBuchung: "Buchung",
-        navLinks: "Links",
         introTitle: "Entdecke Südnorwegen",
         introText: "Hier findest du unsere liebsten Ausflugsziele rund um das Ferienhaus. Klicke auf „Route starten“, um direkt die Navigation auf deinem Smartphone zu öffnen.",
         zieleTitle: "Sehenswürdigkeiten in der Nähe",
-        mapTitle: "Alle Ziele auf der Karte",
+        socialTitle: "Folge uns",
+        socialText: "Besuche uns auf unseren Social-Media-Kanälen:",
         bookingTitle: "Buchung",
-        bookingText: "Die Buchung erfolgt über die Vermittlungsseite von Novasol:",
-        bookingBtn: "Zur Buchung"
+        bookingText: "Die Buchung erfolgt über die Vermittlungsseite von Novasol:"
     },
     en: {
-        title: "Welcome to Holiday Home Lussevika",
-        navStart: "Home",
+        title: "Welcome to Lussevika Holiday Home",
+        navStart: "Start",
         navZiele: "Attractions",
         navKarte: "Map",
+        navSocial: "Social Media",
         navBuchung: "Booking",
-        navLinks: "Links",
         introTitle: "Discover Southern Norway",
-        introText: "Here you will find our favorite excursions around the holiday home. Click 'Start route' to open navigation on your smartphone.",
+        introText: "Here you find our favorite attractions near the holiday home. Click 'Start Route' to open navigation on your smartphone.",
         zieleTitle: "Nearby Attractions",
-        mapTitle: "All destinations on the map",
+        socialTitle: "Follow us",
+        socialText: "Visit us on our social media channels:",
         bookingTitle: "Booking",
-        bookingText: "Booking is via the Novasol website:",
-        bookingBtn: "Go to booking"
+        bookingText: "Booking is via Novasol's portal:"
     },
     no: {
-        title: "Velkommen til Feriehus Lussevika",
+        title: "Velkommen til Ferienhaus Lussevika",
         navStart: "Start",
-        navZiele: "Severdigheter",
+        navZiele: "Attraksjoner",
         navKarte: "Kart",
+        navSocial: "Sosiale medier",
         navBuchung: "Bestilling",
-        navLinks: "Lenker",
         introTitle: "Oppdag Sør-Norge",
-        introText: "Her finner du våre favorittutflukter rundt feriehuset. Klikk 'Start rute' for å åpne navigasjonen på smarttelefonen.",
-        zieleTitle: "Severdigheter i nærheten",
-        mapTitle: "Alle mål på kartet",
+        introText: "Her finner du våre favorittsteder i nærheten av feriehuset. Klikk på 'Start rute' for å åpne navigasjon på smarttelefonen.",
+        zieleTitle: "Attraksjoner i nærheten",
+        socialTitle: "Følg oss",
+        socialText: "Besøk oss på våre sosiale medier:",
         bookingTitle: "Bestilling",
-        bookingText: "Bestillingen skjer via Novasol-nettstedet:",
-        bookingBtn: "Gå til bestilling"
+        bookingText: "Bestilling skjer via Novasols portal:"
     }
 };
 
-// Sehenswürdigkeiten anzeigen
-function renderAttractions(lang) {
-    const container = document.getElementById("attractions");
-    container.innerHTML = "";
-    attractionsMaster.forEach(attraction => {
-        const t = attraction[lang];
-        container.innerHTML += `
-            <div class="card">
-                <img src="${attraction.img}" alt="${attraction.name}">
-                <h3>${attraction.name}</h3>
-                <p>${t.desc}</p>
-                <p><strong>${t.distance}</strong> ca. XX km</p>
-                <a class="btn" target="_blank" href="${attraction.link}">${t.routeBtn}</a>
-            </div>
-        `;
+document.getElementById("languageSwitcher").addEventListener("change", (e)=>{
+    const lang = e.target.value;
+    Object.keys(translations[lang]).forEach(id=>{
+        const el = document.getElementById(id);
+        if(el) el.innerText = translations[lang][id];
     });
-}
-
-// Sprache wechseln
-function changeLanguage(lang) {
-    for (const key in translations[lang]) {
-        const el = document.getElementById(key);
-        if (el) el.textContent = translations[lang][key];
-    }
-    renderAttractions(lang);
-}
-
-document.getElementById("languageSwitcher").addEventListener("change", function() {
-    changeLanguage(this.value);
 });
-
-// Standard Sprache laden
-changeLanguage("de");
 </script>
 
 </body>
