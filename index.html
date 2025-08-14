@@ -67,19 +67,6 @@
     .btn:hover {
         background-color: #0066cc;
     }
-    .social-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 15px;
-        background-color: #eee;
-        border-radius: 5px;
-        text-decoration: none;
-        color: black;
-    }
-    .social-btn img {
-        height: 20px;
-    }
     iframe {
         width: 100%;
         height: 500px;
@@ -115,8 +102,6 @@
 <!-- Sehenswürdigkeiten -->
 <div class="container" id="ziele">
     <h2 id="zieleTitle">Sehenswürdigkeiten in der Nähe</h2>
-
-    <!-- 15 Sehenswürdigkeiten -->
     <div id="attractions"></div>
 </div>
 
@@ -133,56 +118,45 @@
     <a class="btn" target="_blank" href="https://www.novasol.de/ferienhaeuser/lindesneslussevika-n36397" id="bookingBtn">Zur Buchung</a>
 </div>
 
-<!-- Links -->
-<div class="container" id="links">
-    <h2 id="linksTitle">Links</h2>
-    <p id="linksText">Hier finden Sie weiterführende Links:</p>
-
-    <div>
-        <h3 id="link1Title">Bootsvermietung – Facebook</h3>
-        <a class="social-btn" target="_blank" href="https://facebook.com">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png" alt="Facebook"> Facebook
-        </a>
-    </div>
-    <div>
-        <h3 id="link2Title">Bootsvermietung – Instagram</h3>
-        <a class="social-btn" target="_blank" href="https://instagram.com">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
-        </a>
-    </div>
-    <div>
-        <h3 id="link3Title">Ferienhaus Norwegen – Facebook</h3>
-        <a class="social-btn" target="_blank" href="https://facebook.com">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png" alt="Facebook"> Facebook
-        </a>
-    </div>
-    <div>
-        <h3 id="link4Title">Ferienhaus Norwegen – Instagram</h3>
-        <a class="social-btn" target="_blank" href="https://instagram.com">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
-        </a>
-    </div>
-</div>
-
 <script>
-const attractionsData = [
-    { name: "Trolltunga", img: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Trolltunga_2018.jpg", link: "https://www.google.com/maps/dir/?api=1&destination=60.1240,6.7386" },
-    { name: "Preikestolen", img: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Preikestolen_Norway_2019.jpg", link: "#" },
-    { name: "Kjeragbolten", img: "https://upload.wikimedia.org/wikipedia/commons/1/15/Kjeragbolten_in_Rogaland%2C_Norway_2016.jpg", link: "#" },
-    { name: "Lindesnes Fyr", img: "https://upload.wikimedia.org/wikipedia/commons/1/14/Lindesnes_Lighthouse_2009.jpg", link: "#" },
-    { name: "Lysefjord", img: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Lysefjorden_from_Kjerag_2018.jpg", link: "#" },
-    { name: "Sørlandsbadet", img: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Swimming_pool_icon.svg", link: "#" },
-    { name: "Setesdal", img: "https://upload.wikimedia.org/wikipedia/commons/4/41/Setesdal_Valley_Norway.jpg", link: "#" },
-    { name: "Flekkefjord", img: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Flekkefjord_Norway_2020.jpg", link: "#" },
-    { name: "Kristiansand Dyrepark", img: "https://upload.wikimedia.org/wikipedia/commons/7/79/Norwegian_Lynx_in_Kristiansand_Zoo.jpg", link: "#" },
-    { name: "Mandal", img: "https://upload.wikimedia.org/wikipedia/commons/3/31/Mandal_town_Norway.jpg", link: "#" },
-    { name: "Sogndalstrand", img: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Sogndalstrand_2018.jpg", link: "#" },
-    { name: "Kvåsfossen", img: "https://upload.wikimedia.org/wikipedia/commons/5/55/Kvasfossen_Norway.jpg", link: "#" },
-    { name: "Lista Fyr", img: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Lista_Lighthouse.jpg", link: "#" },
-    { name: "Byglandsfjord", img: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Byglandsfjord_Norway.jpg", link: "#" },
-    { name: "Evje Mineralpark", img: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Quartz_minerals.jpg", link: "#" }
+// Zentrale Liste mit allen Sehenswürdigkeiten & Übersetzungen
+const attractionsMaster = [
+    {
+        name: "Trolltunga",
+        img: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Trolltunga_2018.jpg",
+        link: "https://www.google.com/maps/dir/?api=1&destination=60.1240,6.7386",
+        de: { desc: "Spektakulärer Felsvorsprung mit atemberaubender Aussicht.", distance: "Entfernung:", routeBtn: "Route starten" },
+        en: { desc: "Spectacular cliff with breathtaking views.", distance: "Distance:", routeBtn: "Start route" },
+        no: { desc: "Spektakulær klippe med fantastisk utsikt.", distance: "Avstand:", routeBtn: "Start rute" }
+    },
+    {
+        name: "Preikestolen",
+        img: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Preikestolen_Norway_2019.jpg",
+        link: "#",
+        de: { desc: "Bekannte Felsplattform über dem Lysefjord.", distance: "Entfernung:", routeBtn: "Route starten" },
+        en: { desc: "Famous rock platform above the Lysefjord.", distance: "Distance:", routeBtn: "Start route" },
+        no: { desc: "Kjent fjellplattform over Lysefjorden.", distance: "Avstand:", routeBtn: "Start rute" }
+    },
+    {
+        name: "Kjeragbolten",
+        img: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Kjeragbolten_-_Norway_-_2011.jpg",
+        link: "#",
+        de: { desc: "Steinblock zwischen zwei Felsen, beliebtes Fotomotiv.", distance: "Entfernung:", routeBtn: "Route starten" },
+        en: { desc: "Boulder wedged between two cliffs, popular photo spot.", distance: "Distance:", routeBtn: "Start route" },
+        no: { desc: "Stein blokk mellom to fjell, populært fotosted.", distance: "Avstand:", routeBtn: "Start rute" }
+    },
+    // 12 weitere Dummy-Ziele
+    ...Array.from({length: 12}, (_,i) => ({
+        name: `Sehenswürdigkeit ${i+4}`,
+        img: "https://via.placeholder.com/800x500?text=Bild",
+        link: "#",
+        de: { desc: "Beschreibung auf Deutsch.", distance: "Entfernung:", routeBtn: "Route starten" },
+        en: { desc: "Description in English.", distance: "Distance:", routeBtn: "Start route" },
+        no: { desc: "Beskrivelse på norsk.", distance: "Avstand:", routeBtn: "Start rute" }
+    }))
 ];
 
+// Titel & Navigation Übersetzungen
 const translations = {
     de: {
         title: "Willkommen im Ferienhaus Lussevika",
@@ -197,18 +171,7 @@ const translations = {
         mapTitle: "Alle Ziele auf der Karte",
         bookingTitle: "Buchung",
         bookingText: "Die Buchung erfolgt über die Vermittlungsseite von Novasol:",
-        bookingBtn: "Zur Buchung",
-        linksTitle: "Links",
-        linksText: "Hier finden Sie weiterführende Links:",
-        link1Title: "Bootsvermietung – Facebook",
-        link2Title: "Bootsvermietung – Instagram",
-        link3Title: "Ferienhaus Norwegen – Facebook",
-        link4Title: "Ferienhaus Norwegen – Instagram",
-        attractions: Array(15).fill().map(() => ({
-            desc: "Beschreibungstext für diese Sehenswürdigkeit auf Deutsch.",
-            distance: "Entfernung:",
-            routeBtn: "Route starten"
-        }))
+        bookingBtn: "Zur Buchung"
     },
     en: {
         title: "Welcome to Holiday Home Lussevika",
@@ -223,18 +186,7 @@ const translations = {
         mapTitle: "All destinations on the map",
         bookingTitle: "Booking",
         bookingText: "Booking is via the Novasol website:",
-        bookingBtn: "Go to booking",
-        linksTitle: "Links",
-        linksText: "Here you can find further links:",
-        link1Title: "Boat rental – Facebook",
-        link2Title: "Boat rental – Instagram",
-        link3Title: "Holiday home Norway – Facebook",
-        link4Title: "Holiday home Norway – Instagram",
-        attractions: Array(15).fill().map(() => ({
-            desc: "Description text for this attraction in English.",
-            distance: "Distance:",
-            routeBtn: "Start route"
-        }))
+        bookingBtn: "Go to booking"
     },
     no: {
         title: "Velkommen til Feriehus Lussevika",
@@ -249,26 +201,16 @@ const translations = {
         mapTitle: "Alle mål på kartet",
         bookingTitle: "Bestilling",
         bookingText: "Bestillingen skjer via Novasol-nettstedet:",
-        bookingBtn: "Gå til bestilling",
-        linksTitle: "Lenker",
-        linksText: "Her finner du flere lenker:",
-        link1Title: "Båtutleie – Facebook",
-        link2Title: "Båtutleie – Instagram",
-        link3Title: "Feriehus Norge – Facebook",
-        link4Title: "Feriehus Norge – Instagram",
-        attractions: Array(15).fill().map(() => ({
-            desc: "Beskrivelse av severdigheten på norsk.",
-            distance: "Avstand:",
-            routeBtn: "Start rute"
-        }))
+        bookingBtn: "Gå til bestilling"
     }
 };
 
+// Sehenswürdigkeiten anzeigen
 function renderAttractions(lang) {
     const container = document.getElementById("attractions");
     container.innerHTML = "";
-    attractionsData.forEach((attraction, index) => {
-        const t = translations[lang].attractions[index];
+    attractionsMaster.forEach(attraction => {
+        const t = attraction[lang];
         container.innerHTML += `
             <div class="card">
                 <img src="${attraction.img}" alt="${attraction.name}">
@@ -281,21 +223,21 @@ function renderAttractions(lang) {
     });
 }
 
-function setLanguage(lang) {
+// Sprache wechseln
+function changeLanguage(lang) {
     for (const key in translations[lang]) {
-        if (key !== "attractions") {
-            const el = document.getElementById(key);
-            if (el) el.textContent = translations[lang][key];
-        }
+        const el = document.getElementById(key);
+        if (el) el.textContent = translations[lang][key];
     }
     renderAttractions(lang);
 }
 
 document.getElementById("languageSwitcher").addEventListener("change", function() {
-    setLanguage(this.value);
+    changeLanguage(this.value);
 });
 
-setLanguage("de");
+// Standard Sprache laden
+changeLanguage("de");
 </script>
 
 </body>
