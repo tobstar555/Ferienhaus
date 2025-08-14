@@ -1,162 +1,283 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferienhaus Lussevika – Ausflugsziele</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        header {
-            background: url('https://upload.wikimedia.org/wikipedia/commons/5/56/Naeroyfjord_Norway_2014.jpg') center/cover;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-        }
-        header h1 {
-            font-size: 2.5em;
-        }
-        nav {
-            background-color: #004080;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: white;
-            padding: 15px 20px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #0066cc;
-        }
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-        }
-        .card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .card img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 15px;
-            background-color: #004080;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .btn:hover {
-            background-color: #0066cc;
-        }
-        iframe {
-            width: 100%;
-            height: 400px;
-            border: none;
-            margin-top: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ferienhaus Fjordblick</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f8f9fa;
+        color: #333;
+    }
+    header {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/5/56/Naeroyfjord_Norway_2014.jpg') center/cover;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+        text-align: center;
+        padding: 0 10px;
+    }
+    header h1 { font-size: 2.5em; }
+    nav {
+        background-color: #004080;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0 10px;
+    }
+    nav .links {
+        display: flex;
+    }
+    nav a {
+        color: white;
+        padding: 15px 20px;
+        text-decoration: none;
+    }
+    nav a:hover { background-color: #0066cc; }
+    nav select {
+        margin: 5px;
+        padding: 5px;
+        font-size: 1em;
+    }
+    .container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px;
+    }
+    .card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #004080;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+    .btn:hover { background-color: #0066cc; }
+    iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+        margin-top: 20px;
+    }
+    .social-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border: 2px solid #ccc;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        margin-top: 10px;
+        transition: 0.3s;
+    }
+    .social-btn:hover {
+        border-color: #004080;
+        transform: scale(1.1);
+    }
+    .social-btn img {
+        width: 24px;
+        height: 24px;
+    }
+</style>
 </head>
 <body>
 
 <header>
-    <h1>Willkommen im Ferienhaus Lussevika</h1>
+    <h1 id="title">Willkommen im Ferienhaus Fjordblick</h1>
 </header>
 
 <nav>
-    <a href="#start">Start</a>
-    <a href="#ziele">Sehenswürdigkeiten</a>
-    <a href="#karte">Karte</a>
-    <a href="#buchung">Buchung</a>
-    <a href="#links">Links</a>
+    <div class="links">
+        <a href="#start" id="navStart">Start</a>
+        <a href="#ziele" id="navZiele">Sehenswürdigkeiten</a>
+        <a href="#karte" id="navKarte">Karte</a>
+        <a href="#links" id="navLinks">Links</a>
+        <a href="#kontakt" id="navKontakt">Kontakt</a>
+    </div>
+    <select id="languageSwitcher">
+        <option value="de">Deutsch</option>
+        <option value="en">English</option>
+        <option value="no">Norsk</option>
+    </select>
 </nav>
 
 <div class="container" id="start">
-    <h2>Entdecke Südnorwegen</h2>
-    <p>Hier findest du unsere liebsten Ausflugsziele rund um das Ferienhaus. Klicke auf „Route starten“, um direkt die Navigation auf deinem Smartphone zu öffnen.</p>
+    <h2 id="introHeading">Entdecke Westnorwegen</h2>
+    <p id="introText">Hier findest du unsere liebsten Ausflugsziele rund um das Ferienhaus Fjordblick. Klicke auf „Route starten“, um direkt die Navigation auf deinem Smartphone zu öffnen.</p>
 </div>
 
 <div class="container" id="ziele">
-    <h2>Sehenswürdigkeiten in der Nähe</h2>
+    <h2 id="zieleHeading">Sehenswürdigkeiten in der Nähe</h2>
 
     <div class="card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Trolltunga_2018.jpg" alt="Trolltunga">
-        <h3>Trolltunga</h3>
-        <p>Spektakulärer Felsvorsprung mit atemberaubender Aussicht. Anspruchsvolle Tageswanderung – gute Kondition erforderlich.</p>
-        <p><strong>Entfernung:</strong> ca. 120 km</p>
-        <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=60.1240,6.7386">Route starten</a>
-    </div>
-
-    <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/V%C3%B8ringsfossen_2010.jpg" alt="Vøringsfossen Wasserfall">
-        <h3>Vøringsfossen Wasserfall</h3>
-        <p>Spektakulärer Wasserfall mit 182 Metern Fallhöhe – leicht mit dem Auto erreichbar, Aussichtspunkt mit Brücke.</p>
-        <p><strong>Entfernung:</strong> ca. 85 km</p>
-        <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=60.4262,7.2505">Route starten</a>
-    </div>
-
-    <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Bergen_view_from_Floyen.jpg" alt="Bergen">
-        <h3>Bergen</h3>
-        <p>Charmante Hafenstadt mit bunten Holzhäusern, Fischmarkt und der Fløibanen-Seilbahn.</p>
-        <p><strong>Entfernung:</strong> ca. 200 km</p>
-        <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=60.3913,5.3221">Route starten</a>
-    </div>
-
-    <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Naeroyfjord_2.jpg" alt="Nærøyfjord">
-        <h3>Nærøyfjord</h3>
-        <p>UNESCO-Weltnaturerbe – einer der schönsten Fjorde der Welt, perfekt für Bootstouren.</p>
-        <p><strong>Entfernung:</strong> ca. 60 km</p>
-        <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=60.9600,6.9100">Route starten</a>
-    </div>
-
-    <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Stegastein_viewpoint.jpg" alt="Stegastein Aussichtspunkt">
-        <h3>Stegastein Aussichtspunkt</h3>
-        <p>360 Meter über dem Aurlandsfjord – spektakuläre Aussicht und Fotospot.</p>
-        <p><strong>Entfernung:</strong> ca. 70 km</p>
-        <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=60.8986,7.1981">Route starten</a>
+        <h3 id="spot1Title">Trolltunga</h3>
+        <p id="spot1Desc">Spektakulärer Felsvorsprung mit atemberaubender Aussicht. Anspruchsvolle Tageswanderung – gute Kondition erforderlich.</p>
+        <p><strong id="spot1DistLabel">Entfernung:</strong> <span id="spot1Dist">ca. 120 km</span></p>
+        <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=60.1240,6.7386" id="spot1Btn">Route starten</a>
     </div>
 </div>
 
 <div class="container" id="karte">
-    <h2>Alle Ziele auf der Karte</h2>
-    <iframe src="https://www.google.com/maps/d/embed?mid=1xqvlbK2Qcq7i4pJgq9pKM_4fEE9yHws&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
-</div>
-
-<div class="container" id="buchung">
-    <h2>Buchung</h2>
-    <p>Die Buchung erfolgt über die Vermittlungsseite von Novasol:</p>
-    <a class="btn" target="_blank" href="https://www.novasol.de/ferienhaeuser/lindesneslussevika-n36397">Zur Buchung</a>
+    <h2 id="mapHeading">Alle Ziele auf der Karte</h2>
+    <iframe src="https://www.google.com/maps/d/embed?mid=1S6XMTJz3mLxZlQokOkmPsnMd7VobzFQ&hl=de"></iframe>
+    <p id="mapTip" style="font-size: 0.9em; color: #555;">Tipp: Du kannst deine eigene Google My Maps Karte mit allen Zielen erstellen und hier einbinden.</p>
 </div>
 
 <div class="container" id="links">
-    <h2>Links</h2>
-    <p>Hier finden sie weiterführende Links:</p>
-    <a class="btn" target="_blank" href="https://www.novasol.de/ferienhaeuser/lindesneslussevika-n36397">Link1</a>
+    <h2 id="linksHeading">Links</h2>
+
+    <div class="card">
+        <h3 id="link1Title">Bootsvermietung Facebook</h3>
+        <a class="social-btn" target="_blank" href="https://facebook.com/deinbootsvermieter">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png" alt="Facebook">
+        </a>
+    </div>
+
+    <div class="card">
+        <h3 id="link2Title">Bootsvermietung Instagram</h3>
+        <a class="social-btn" target="_blank" href="https://instagram.com/deinbootsvermieter">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        </a>
+    </div>
+
+    <div class="card">
+        <h3 id="link3Title">Ferienhaus Norwegen Facebook</h3>
+        <a class="social-btn" target="_blank" href="https://facebook.com/deinferienhaus">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png" alt="Facebook">
+        </a>
+    </div>
+
+    <div class="card">
+        <h3 id="link4Title">Ferienhaus Norwegen Instagram</h3>
+        <a class="social-btn" target="_blank" href="https://instagram.com/deinferienhaus">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        </a>
+    </div>
 </div>
 
+<div class="container" id="kontakt">
+    <h2 id="contactHeading">Kontakt & Buchung</h2>
+    <p id="contactText">Die Buchung erfolgt über unsere Vermittlungsseite:</p>
+    <a class="btn" target="_blank" href="https://www.deine-ferienhausvermittlung.de" id="contactBtn">Zur Buchung</a>
+</div>
+
+<script>
+const translations = {
+    de: {
+        title: "Willkommen im Ferienhaus Fjordblick",
+        navStart: "Start",
+        navZiele: "Sehenswürdigkeiten",
+        navKarte: "Karte",
+        navLinks: "Links",
+        navKontakt: "Kontakt",
+        introHeading: "Entdecke Westnorwegen",
+        introText: "Hier findest du unsere liebsten Ausflugsziele rund um das Ferienhaus Fjordblick. Klicke auf „Route starten“, um direkt die Navigation auf deinem Smartphone zu öffnen.",
+        zieleHeading: "Sehenswürdigkeiten in der Nähe",
+        spot1Title: "Trolltunga",
+        spot1Desc: "Spektakulärer Felsvorsprung mit atemberaubender Aussicht. Anspruchsvolle Tageswanderung – gute Kondition erforderlich.",
+        spot1DistLabel: "Entfernung:",
+        spot1Dist: "ca. 120 km",
+        spot1Btn: "Route starten",
+        mapHeading: "Alle Ziele auf der Karte",
+        mapTip: "Tipp: Du kannst deine eigene Google My Maps Karte mit allen Zielen erstellen und hier einbinden.",
+        linksHeading: "Links",
+        link1Title: "Bootsvermietung Facebook",
+        link2Title: "Bootsvermietung Instagram",
+        link3Title: "Ferienhaus Norwegen Facebook",
+        link4Title: "Ferienhaus Norwegen Instagram",
+        contactHeading: "Kontakt & Buchung",
+        contactText: "Die Buchung erfolgt über unsere Vermittlungsseite:",
+        contactBtn: "Zur Buchung"
+    },
+    en: {
+        title: "Welcome to Fjordblick Holiday Home",
+        navStart: "Home",
+        navZiele: "Attractions",
+        navKarte: "Map",
+        navLinks: "Links",
+        navKontakt: "Contact",
+        introHeading: "Discover Western Norway",
+        introText: "Here you will find our favorite excursion destinations around Fjordblick Holiday Home. Click 'Start route' to open navigation directly on your smartphone.",
+        zieleHeading: "Nearby Attractions",
+        spot1Title: "Trolltunga",
+        spot1Desc: "Spectacular rock formation with breathtaking views. A challenging full-day hike – good fitness required.",
+        spot1DistLabel: "Distance:",
+        spot1Dist: "approx. 120 km",
+        spot1Btn: "Start route",
+        mapHeading: "All destinations on the map",
+        mapTip: "Tip: You can create your own Google My Maps with all destinations and embed it here.",
+        linksHeading: "Links",
+        link1Title: "Boat Rental Facebook",
+        link2Title: "Boat Rental Instagram",
+        link3Title: "Holiday Home Norway Facebook",
+        link4Title: "Holiday Home Norway Instagram",
+        contactHeading: "Contact & Booking",
+        contactText: "Bookings are made through our rental agency website:",
+        contactBtn: "Go to booking"
+    },
+    no: {
+        title: "Velkommen til Fjordblick Feriehus",
+        navStart: "Start",
+        navZiele: "Severdigheter",
+        navKarte: "Kart",
+        navLinks: "Lenker",
+        navKontakt: "Kontakt",
+        introHeading: "Oppdag Vest-Norge",
+        introText: "Her finner du våre favorittutflukter rundt Fjordblick Feriehus. Klikk 'Start rute' for å åpne navigasjonen direkte på smarttelefonen din.",
+        zieleHeading: "Severdigheter i nærheten",
+        spot1Title: "Trolltunga",
+        spot1Desc: "Spektakulær fjellformasjon med fantastisk utsikt. En krevende dagstur – god kondisjon er nødvendig.",
+        spot1DistLabel: "Avstand:",
+        spot1Dist: "ca. 120 km",
+        spot1Btn: "Start rute",
+        mapHeading: "Alle destinasjoner på kartet",
+        mapTip: "Tips: Du kan lage ditt eget Google My Maps med alle destinasjoner og legge det inn her.",
+        linksHeading: "Lenker",
+        link1Title: "Båtutleie Facebook",
+        link2Title: "Båtutleie Instagram",
+        link3Title: "Feriehus Norge Facebook",
+        link4Title: "Feriehus Norge Instagram",
+        contactHeading: "Kontakt og bestilling",
+        contactText: "Bestillinger gjøres via vår utleiebyrås nettside:",
+        contactBtn: "Gå til bestilling"
+    }
+};
+
+const langSelect = document.getElementById('languageSwitcher');
+
+function updateLanguage(lang) {
+    Object.keys(translations[lang]).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = translations[lang][id];
+    });
+}
+
+langSelect.addEventListener('change', e => {
+    updateLanguage(e.target.value);
+});
+
+// Initial load
+updateLanguage('de');
+</script>
 
 </body>
 </html>
-
-
-
-
-
