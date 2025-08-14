@@ -80,6 +80,12 @@
     .social-btn img {
         height: 20px;
     }
+    iframe {
+        width: 100%;
+        height: 500px;
+        border: none;
+        border-radius: 10px;
+    }
 </style>
 </head>
 <body>
@@ -110,15 +116,8 @@
 <div class="container" id="ziele">
     <h2 id="zieleTitle">Sehenswürdigkeiten in der Nähe</h2>
 
-    <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Trolltunga_2018.jpg" alt="Trolltunga">
-        <h3 id="ziel1Title">Trolltunga</h3>
-        <p id="ziel1Text">Spektakulärer Felsvorsprung mit atemberaubender Aussicht. Anspruchsvolle Tageswanderung – gute Kondition erforderlich.</p>
-        <p><strong id="dist1Label">Entfernung:</strong> ca. 120 km</p>
-        <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=60.1240,6.7386" id="route1">Route starten</a>
-    </div>
-
-    <!-- Hier könnten weitere Ziele mit ähnlicher Struktur stehen -->
+    <!-- 15 Sehenswürdigkeiten -->
+    <div id="attractions"></div>
 </div>
 
 <!-- Karte -->
@@ -140,25 +139,25 @@
     <p id="linksText">Hier finden Sie weiterführende Links:</p>
 
     <div>
-        <h3>Bootsvermietung – Facebook</h3>
+        <h3 id="link1Title">Bootsvermietung – Facebook</h3>
         <a class="social-btn" target="_blank" href="https://facebook.com">
             <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png" alt="Facebook"> Facebook
         </a>
     </div>
     <div>
-        <h3>Bootsvermietung – Instagram</h3>
+        <h3 id="link2Title">Bootsvermietung – Instagram</h3>
         <a class="social-btn" target="_blank" href="https://instagram.com">
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
         </a>
     </div>
     <div>
-        <h3>Ferienhaus Norwegen – Facebook</h3>
+        <h3 id="link3Title">Ferienhaus Norwegen – Facebook</h3>
         <a class="social-btn" target="_blank" href="https://facebook.com">
             <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png" alt="Facebook"> Facebook
         </a>
     </div>
     <div>
-        <h3>Ferienhaus Norwegen – Instagram</h3>
+        <h3 id="link4Title">Ferienhaus Norwegen – Instagram</h3>
         <a class="social-btn" target="_blank" href="https://instagram.com">
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
         </a>
@@ -166,6 +165,24 @@
 </div>
 
 <script>
+const attractionsData = [
+    { name: "Trolltunga", img: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Trolltunga_2018.jpg", link: "https://www.google.com/maps/dir/?api=1&destination=60.1240,6.7386" },
+    { name: "Preikestolen", img: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Preikestolen_Norway_2019.jpg", link: "#" },
+    { name: "Kjeragbolten", img: "https://upload.wikimedia.org/wikipedia/commons/1/15/Kjeragbolten_in_Rogaland%2C_Norway_2016.jpg", link: "#" },
+    { name: "Lindesnes Fyr", img: "https://upload.wikimedia.org/wikipedia/commons/1/14/Lindesnes_Lighthouse_2009.jpg", link: "#" },
+    { name: "Lysefjord", img: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Lysefjorden_from_Kjerag_2018.jpg", link: "#" },
+    { name: "Sørlandsbadet", img: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Swimming_pool_icon.svg", link: "#" },
+    { name: "Setesdal", img: "https://upload.wikimedia.org/wikipedia/commons/4/41/Setesdal_Valley_Norway.jpg", link: "#" },
+    { name: "Flekkefjord", img: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Flekkefjord_Norway_2020.jpg", link: "#" },
+    { name: "Kristiansand Dyrepark", img: "https://upload.wikimedia.org/wikipedia/commons/7/79/Norwegian_Lynx_in_Kristiansand_Zoo.jpg", link: "#" },
+    { name: "Mandal", img: "https://upload.wikimedia.org/wikipedia/commons/3/31/Mandal_town_Norway.jpg", link: "#" },
+    { name: "Sogndalstrand", img: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Sogndalstrand_2018.jpg", link: "#" },
+    { name: "Kvåsfossen", img: "https://upload.wikimedia.org/wikipedia/commons/5/55/Kvasfossen_Norway.jpg", link: "#" },
+    { name: "Lista Fyr", img: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Lista_Lighthouse.jpg", link: "#" },
+    { name: "Byglandsfjord", img: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Byglandsfjord_Norway.jpg", link: "#" },
+    { name: "Evje Mineralpark", img: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Quartz_minerals.jpg", link: "#" }
+];
+
 const translations = {
     de: {
         title: "Willkommen im Ferienhaus Lussevika",
@@ -177,16 +194,21 @@ const translations = {
         introTitle: "Entdecke Südnorwegen",
         introText: "Hier findest du unsere liebsten Ausflugsziele rund um das Ferienhaus. Klicke auf „Route starten“, um direkt die Navigation auf deinem Smartphone zu öffnen.",
         zieleTitle: "Sehenswürdigkeiten in der Nähe",
-        ziel1Title: "Trolltunga",
-        ziel1Text: "Spektakulärer Felsvorsprung mit atemberaubender Aussicht. Anspruchsvolle Tageswanderung – gute Kondition erforderlich.",
-        dist1Label: "Entfernung:",
-        route1: "Route starten",
         mapTitle: "Alle Ziele auf der Karte",
         bookingTitle: "Buchung",
         bookingText: "Die Buchung erfolgt über die Vermittlungsseite von Novasol:",
         bookingBtn: "Zur Buchung",
         linksTitle: "Links",
-        linksText: "Hier finden Sie weiterführende Links:"
+        linksText: "Hier finden Sie weiterführende Links:",
+        link1Title: "Bootsvermietung – Facebook",
+        link2Title: "Bootsvermietung – Instagram",
+        link3Title: "Ferienhaus Norwegen – Facebook",
+        link4Title: "Ferienhaus Norwegen – Instagram",
+        attractions: Array(15).fill().map(() => ({
+            desc: "Beschreibungstext für diese Sehenswürdigkeit auf Deutsch.",
+            distance: "Entfernung:",
+            routeBtn: "Route starten"
+        }))
     },
     en: {
         title: "Welcome to Holiday Home Lussevika",
@@ -198,16 +220,21 @@ const translations = {
         introTitle: "Discover Southern Norway",
         introText: "Here you will find our favorite excursions around the holiday home. Click 'Start route' to open navigation on your smartphone.",
         zieleTitle: "Nearby Attractions",
-        ziel1Title: "Trolltunga",
-        ziel1Text: "Spectacular rock formation with breathtaking views. Challenging day hike – good fitness required.",
-        dist1Label: "Distance:",
-        route1: "Start route",
         mapTitle: "All destinations on the map",
         bookingTitle: "Booking",
         bookingText: "Booking is via the Novasol website:",
         bookingBtn: "Go to booking",
         linksTitle: "Links",
-        linksText: "Here you can find further links:"
+        linksText: "Here you can find further links:",
+        link1Title: "Boat rental – Facebook",
+        link2Title: "Boat rental – Instagram",
+        link3Title: "Holiday home Norway – Facebook",
+        link4Title: "Holiday home Norway – Instagram",
+        attractions: Array(15).fill().map(() => ({
+            desc: "Description text for this attraction in English.",
+            distance: "Distance:",
+            routeBtn: "Start route"
+        }))
     },
     no: {
         title: "Velkommen til Feriehus Lussevika",
@@ -219,28 +246,56 @@ const translations = {
         introTitle: "Oppdag Sør-Norge",
         introText: "Her finner du våre favorittutflukter rundt feriehuset. Klikk 'Start rute' for å åpne navigasjonen på smarttelefonen.",
         zieleTitle: "Severdigheter i nærheten",
-        ziel1Title: "Trolltunga",
-        ziel1Text: "Spektakulær fjellformasjon med fantastisk utsikt. Utfordrende dagstur – god fysisk form kreves.",
-        dist1Label: "Avstand:",
-        route1: "Start rute",
         mapTitle: "Alle mål på kartet",
         bookingTitle: "Bestilling",
         bookingText: "Bestillingen skjer via Novasol-nettstedet:",
         bookingBtn: "Gå til bestilling",
         linksTitle: "Lenker",
-        linksText: "Her finner du flere lenker:"
+        linksText: "Her finner du flere lenker:",
+        link1Title: "Båtutleie – Facebook",
+        link2Title: "Båtutleie – Instagram",
+        link3Title: "Feriehus Norge – Facebook",
+        link4Title: "Feriehus Norge – Instagram",
+        attractions: Array(15).fill().map(() => ({
+            desc: "Beskrivelse av severdigheten på norsk.",
+            distance: "Avstand:",
+            routeBtn: "Start rute"
+        }))
     }
 };
 
-document.getElementById("languageSwitcher").addEventListener("change", function() {
-    const lang = this.value;
+function renderAttractions(lang) {
+    const container = document.getElementById("attractions");
+    container.innerHTML = "";
+    attractionsData.forEach((attraction, index) => {
+        const t = translations[lang].attractions[index];
+        container.innerHTML += `
+            <div class="card">
+                <img src="${attraction.img}" alt="${attraction.name}">
+                <h3>${attraction.name}</h3>
+                <p>${t.desc}</p>
+                <p><strong>${t.distance}</strong> ca. XX km</p>
+                <a class="btn" target="_blank" href="${attraction.link}">${t.routeBtn}</a>
+            </div>
+        `;
+    });
+}
+
+function setLanguage(lang) {
     for (const key in translations[lang]) {
-        const el = document.getElementById(key);
-        if (el) {
-            el.textContent = translations[lang][key];
+        if (key !== "attractions") {
+            const el = document.getElementById(key);
+            if (el) el.textContent = translations[lang][key];
         }
     }
+    renderAttractions(lang);
+}
+
+document.getElementById("languageSwitcher").addEventListener("change", function() {
+    setLanguage(this.value);
 });
+
+setLanguage("de");
 </script>
 
 </body>
