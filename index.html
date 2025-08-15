@@ -1,94 +1,19 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ferienhaus Lussevika – Ausflugsziele</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #f8f9fa;
-        color: #333;
-    }
-    header {
-        background: url('https://upload.wikimedia.org/wikipedia/commons/5/56/Naeroyfjord_Norway_2014.jpg') center/cover;
-        height: 300px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-    }
-    header h1 {
-        font-size: 2.5em;
-    }
-    nav {
-        background-color: #004080;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    nav a, nav select {
-        color: white;
-        padding: 15px 20px;
-        text-decoration: none;
-        background: none;
-        border: none;
-        font-size: 1em;
-    }
-    nav a:hover {
-        background-color: #0066cc;
-    }
-    .container {
-        max-width: 1000px;
-        margin: auto;
-        padding: 20px;
-    }
-    .card {
-        background-color: white;
-        border-radius: 10px;
-        padding: 15px;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .card img {
-        max-width: 100%;
-        border-radius: 10px;
-    }
-    .btn {
-        display: inline-block;
-        padding: 10px 15px;
-        background-color: #004080;
-        color: white;
-        border-radius: 5px;
-        text-decoration: none;
-        margin-top: 5px;
-    }
-    .btn:hover {
-        background-color: #0066cc;
-    }
-    .social-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 15px;
-        background-color: #eee;
-        border-radius: 5px;
-        text-decoration: none;
-        color: black;
-        margin: 5px 5px 5px 0;
-    }
-    .social-btn img {
-        height: 20px;
-    }
-    iframe {
-        width: 100%;
-        height: 600px;
-        border: none;
-        border-radius: 10px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferienhaus Lussevika – Ausflugsziele</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header, nav, .container { padding: 20px; }
+        nav a { margin-right: 10px; text-decoration: none; color: #333; }
+        .card { border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; }
+        .card img { max-width: 100%; height: auto; }
+        .btn, .social-btn { display: inline-block; margin-top: 10px; padding: 8px 12px; background: #0073e6; color: white; text-decoration: none; border-radius: 4px; }
+        .social-btn img { width: 20px; vertical-align: middle; margin-right: 5px; }
+        iframe { width: 100%; height: 400px; border: 0; }
+    </style>
 </head>
 <body>
 
@@ -147,14 +72,11 @@
     <a class="social-btn" target="_blank" href="https://instagram.com/ferienhausnorwegen/?igsh=Z244OXB3ZmhocDZ2&utm_source=qr">
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
     </a>
-
-    <!-- Neuer Unterpunkt: Bootesvermietung und Bootstouren -->
-    <h2>Bootesvermietung und Bootstouren</h2>
-    <p>Buche eine Bootstour oder miete ein Boot direkt in der Nähe:</p>
+    <h3>Bootsvermietung und Bootstouren</h3>
     <a class="social-btn" target="_blank" href="https://facebook.com/BootsvermietungNorwegen/">
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png" alt="Facebook"> Facebook
     </a>
-    <a class="social-btn" target="_blank" href="https://instagram.com/bootsvermietungnorwegen/">
+    <a class="social-btn" target="_blank" href="https://instagram.com/bootstouren_norwegen/">
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
     </a>
 </div>
@@ -215,30 +137,42 @@ const translations = {
     }
 };
 
-document.getElementById("languageSwitcher").addEventListener("change", (e)=>{
+document.getElementById("languageSwitcher").addEventListener("change", (e) => {
     const lang = e.target.value;
-    Object.keys(translations[lang]).forEach(id=>{
+    Object.keys(translations[lang]).forEach(id => {
         const el = document.getElementById(id);
-        if(el) el.innerText = translations[lang][id];
+        if (el) el.innerText = translations[lang][id];
     });
 });
 
-// Daten für Ziele 2-15
 const weitereZiele = [
-    {img:"bilder/lindesnes_fyr.jpg", alt:"Lindesnes Fyr", title:"Lindesnes Fyr", text:"Lindesnes fyr ist der älteste Leuchtturm Norwegens und markiert den südlichsten Punkt des Landes.", dist:"ca. 18km", coords:"57.98448,7.04844"},
-    {img:"bilder/ziel3.jpg", alt:"Skrelia", title:"Skrelia", text:"Der Skrelia ist ein beliebter Wander- und Aussichtspunkt in der Region.", dist:"ca. 5km", coords:"58.005,7.123"},
-    // Hier kannst du die restlichen Ziele bis 15 einfügen
+    { img: "bilder/lindesnes_fyr.jpg", alt: "Lindesnes Fyr", title: "Lindesnes Fyr", text: "Lindesnes fyr ist der älteste Leuchtturm Norwegens und markiert den südlichsten Punkt des Landes.", dist: "ca. 18 km", coords: "57.98448,7.04844" },
+    { img: "bilder/ziel3.jpg", alt: "Skrelia", title: "Skrelia", text: "Der Skrelia-Wasserfall beeindruckt mit breiten Felsrutschen und weitem Blick über Fjorde und Küstenlandschaft.", dist: "ca. 36 km", coords: "58.15364,6.89776" },
+    { img: "bilder/ziel4.jpg", alt: "Kvåsvossen", title: "Kvåsvossen", text: "Der Kvåsfossen ist ein mächtiger Wasserfall in Sørlandet, neben dem das Lachscenter spannende Einblicke in das Leben der Wildlachse bietet.", dist: "ca. 45 km", coords: "58.26449,7.19277" },
+    { img: "bilder/ziel5.jpg", alt: "Hausvikodden Fort", title: "Hausvikodden Fort", text: "Hausvikodden Fort ist eine gut erhaltene deutsche Küstenbefestigung aus dem Zweiten Weltkrieg.", dist: "ca. 40 km", coords: "58.04568,6.98662" },
+    { img: "bilder/ziel6.jpg", alt: "Varnes Fort", title: "Varnes Fort", text: "Varnes Fort bietet Panoramablick über den Fedafjord und Wanderwege durch unberührte Natur.", dist: "ca. 65 km", coords: "58.17358,6.63921" },
+    { img: "bilder/ziel7.jpg", alt: "Bøensbakken", title: "Bøensbakken", text: "Bøenbakken ist ein historischer, steiler Handelsweg, heute ein malerischer Wanderpfad.", dist: "ca. 50 km", coords: "58.04512,6.98765" },
+    { img: "bilder/ziel8.jpg", alt: "Lyngdal Zentrum", title: "Lyngdal Zentrum", text: "Charmantes Stadtzentrum mit Cafés, Geschäften und Kultur.", dist: "ca. 12 km", coords: "58.0921,6.8472" },
+    { img: "bilder/ziel9.jpg", alt: "Sørlandsbadet", title: "Sørlandsbadet", text: "Wasserpark mit Spaß für die ganze Familie.", dist: "ca. 15 km", coords: "58.0978,6.8564" },
+    { img: "bilder/ziel10.jpg", alt: "Farsund Museum", title: "Farsund Museum", text: "Lokales Museum mit interessanter Geschichte.", dist: "ca. 22 km", coords: "58.0947,6.7934" },
+    { img: "bilder/ziel11.jpg", alt: "Lista Fyr", title: "Lista Fyr", text: "Historischer Leuchtturm mit tollen Aussichten.", dist: "ca. 48 km", coords: "58.0851,6.5775" },
+    { img: "bilder/ziel12.jpg", alt: "Ryvingen Fyr", title: "Ryvingen Fyr", text: "Leuchtturm am südlichsten Punkt Norwegens.", dist: "ca. 55 km", coords: "57.9874,6.5364" },
+    { img: "bilder/ziel13.jpg", alt: "Bakeriet Lyngdal", title: "Bakeriet Lyngdal", text: "Traditionelle Bäckerei mit norwegischen Spezialitäten.", dist: "ca. 12 km", coords: "58.0921,6.8456" },
+    { img: "bilder/ziel14.jpg", alt: "Lyngdal Kirke", title: "Lyngdal Kirke", text: "Historische Kirche im Zentrum von Lyngdal.", dist: "ca. 13 km", coords: "58.0931,6.8469" },
+    { img: "bilder/ziel15.jpg", alt: "Sælid Camping", title: "Sælid Camping", text: "Campingplatz am Wasser mit Freizeitmöglichkeiten.", dist: "ca. 8 km", coords: "58.0345,7.2001" }
 ];
 
 const container = document.getElementById("zieleContainer");
-weitereZiele.forEach((ziel,i)=>{
+weitereZiele.forEach((ziel, i) => {
     const card = document.createElement("div");
     card.className = "card";
-    card.innerHTML = `<img src="${ziel.img}" alt="${ziel.alt}">
-    <h3>${ziel.title}</h3>
-    <p>${ziel.text}</p>
-    <p><strong>Entfernung:</strong> ${ziel.dist}</p>
-    <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=${ziel.coords}">Route starten</a>`;
+    card.innerHTML = `
+        <img src="${ziel.img}" alt="${ziel.alt}">
+        <h3>${ziel.title}</h3>
+        <p>${ziel.text}</p>
+        <p><strong>Entfernung:</strong> ${ziel.dist}</p>
+        <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=${ziel.coords}">Route starten</a>
+    `;
     container.appendChild(card);
 });
 </script>
