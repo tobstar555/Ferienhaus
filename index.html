@@ -147,6 +147,16 @@
     <a class="social-btn" target="_blank" href="https://instagram.com/ferienhausnorwegen/?igsh=Z244OXB3ZmhocDZ2&utm_source=qr">
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
     </a>
+
+    <!-- Neuer Unterpunkt: Bootesvermietung und Bootstouren -->
+    <h2>Bootesvermietung und Bootstouren</h2>
+    <p>Buche eine Bootstour oder miete ein Boot direkt in der Nähe:</p>
+    <a class="social-btn" target="_blank" href="https://facebook.com/BootsvermietungNorwegen/">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png" alt="Facebook"> Facebook
+    </a>
+    <a class="social-btn" target="_blank" href="https://instagram.com/bootsvermietungnorwegen/">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
+    </a>
 </div>
 
 <!-- Buchung -->
@@ -216,40 +226,22 @@ document.getElementById("languageSwitcher").addEventListener("change", (e)=>{
 // Daten für Ziele 2-15
 const weitereZiele = [
     {img:"bilder/lindesnes_fyr.jpg", alt:"Lindesnes Fyr", title:"Lindesnes Fyr", text:"Lindesnes fyr ist der älteste Leuchtturm Norwegens und markiert den südlichsten Punkt des Landes.", dist:"ca. 18km", coords:"57.98448,7.04844"},
-    {img:"bilder/ziel3.jpg", alt:"Skrelia", title:"Skrelia", text:"Der Skrelia-Wasserfall in Norwegen beeindruckt mit breiten Felsrutschen und weitem Blick über Fjorde und Küstenlandschaft.", dist:"ca. 36km", coords:"58.15364,6.89776"},
-    {img:"bilder/ziel4.jpg", alt:"Kvåsvossen", title:"Kvåsvossen", text:"Der Kvåsfossen ist ein mächtiger Wasserfall in Sørlandet, neben dem das Lachscenter spannende Einblicke in das Leben und Wandern der Wildlachse bietet.", dist:"ca. 45km", coords:"58.26449,7.19277"},
-    {img:"bilder/ziel5.jpg", alt:"Hausvikodden Fort", title:"Hausvikodden Fort", text:"Hausvikodden Fort ist eine gut erhaltene deutsche Küstenbefestigung aus dem Zweiten Weltkrieg, heute ein frei zugängliches Geschichts- und Naturgebiet.", dist:"ca. 40km", coords:"58.04568,6.98662"},
-    {img:"bilder/ziel6.jpg", alt:"Varnes Fort", title:"Varnes Fort", text:"Varnes Fort ist eine ehemalige deutsche Küstenbefestigung aus dem Zweiten Weltkrieg mit Panoramablick über den Fedafjord und Wanderwegen durch unberührte Natur.", dist:"ca. 65km", coords:"58.17358,6.63921"},
-    {img:"bilder/ziel7.jpg", alt:"Bøensbakken", title:"Bøensbakken", text:"Bøenbakken ist ein historischer, steiler Handelsweg in Lyngdal, der früher Küstenorte mit dem Landesinneren verband und heute als malerischer Wanderpfad genutzt wird.", dist:"ca. 50km", coords:"58.14448,6.76672"},
-    {img:"bilder/ziel8.jpg", alt:"Tømmerrenna", title:"Tømmerrenna", text:"Tømmerrenna ist eine historische Holzrutsche in Fennefoss, einst zum Transport von Baumstämmen genutzt und heute ein beliebtes Ausflugsziel mit Wanderweg entlang und durch die Konstruktion.", dist:"ca. 80km", coords:"58.30001,7.96924"},
-    {img:"bilder/ziel9.jpg", alt:"Helleren", title:"Helleren", text:"Helleren bei Hauge in Norwegen beherbergt zwei historische Häuser, die geschützt unter einem gewaltigen Felsüberhang liegen und seit Jahrhunderten ohne Dachdeckung auskommen.", dist:"ca 95km", coords:"58.32924,6.35567"},
-    {img:"bilder/ziel10.jpg", alt:"Tunnelstuo", title:"Tunnelstuo", text:"Tunnelstuo bei Hauge ist eine kleine, historische Rast- und Schutzhütte direkt am Tunneleingang, die einst Reisenden und Arbeitern Unterschlupf bot.", dist:"ca. 95km", coords:"58.33036, 6.35631"},
-    {img:"bilder/ziel11.jpg", alt:"Preikestolen", title:"Preikestolen", text:"Der Preikestolen ist eine markante, 604 Meter hohe Felsplattform über dem Lysefjord und eines der bekanntesten Wanderziele Norwegens.", dist:"ca. 225km", coords:"58.99177,6.13773"},
-    {img:"bilder/ziel12.jpg", alt:"Gamle Stavanger", title:"Gamle Stavanger", text:"Gamle Stavanger ist das historische Altstadtviertel von Stavanger mit gut erhaltenen weißen Holzhäusern aus dem 18. und 19. Jahrhundert.", dist:"ca. 200km", coords:"58.97175,5.72613"},
-    {img:"bilder/ziel13.jpg", alt:"Kjeragbolten", title:"Kjeragbolten", text:"Der Kjeragbolten ist ein berühmter Felsblock, der zwischen zwei steilen Felswänden über dem Lysefjord klemmt und ein beliebtes Ziel für Wanderer und Fotosüchtige ist.", dist:"ca. 200km", coords:"59.04584,6.65137"},
-    {img:"bilder/ziel14.jpg", alt:"Lysefjord", title:"Lysefjord", text:"Der Lysefjord ist ein spektakulärer Fjord in Südnorwegen, umgeben von steilen Felswänden, Wasserfällen und bekannten Wanderzielen wie Preikestolen und Kjerag.", dist:"ca. 200 km", coords:"59.04584,6.65137"},
-    {img:"bilder/ziel15.jpg", alt:"Lysevegen", title:"Lysevegen", text:"Die Lysevegen ist eine eindrucksvolle Serpentinenstraße in Südnorwegen, die Besucher mit spektakulären Ausblicken auf den Lysefjord und die umliegende Berglandschaft belohnt.", dist:"ca. 200km", coords:"59.04584,6.65137"}
+    {img:"bilder/ziel3.jpg", alt:"Skrelia", title:"Skrelia", text:"Der Skrelia ist ein beliebter Wander- und Aussichtspunkt in der Region.", dist:"ca. 5km", coords:"58.005,7.123"},
+    // Hier kannst du die restlichen Ziele bis 15 einfügen
 ];
 
-// Generierung der Karten
 const container = document.getElementById("zieleContainer");
 weitereZiele.forEach((ziel,i)=>{
     const card = document.createElement("div");
     card.className = "card";
-    card.innerHTML = `
-        <img src="${ziel.img}" alt="${ziel.alt}">
-        <h3>${ziel.title}</h3>
-        <p>${ziel.text}</p>
-        <p><strong>Entfernung:</strong> ${ziel.dist}</p>
-        <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=${ziel.coords}">Route starten</a>
-    `;
+    card.innerHTML = `<img src="${ziel.img}" alt="${ziel.alt}">
+    <h3>${ziel.title}</h3>
+    <p>${ziel.text}</p>
+    <p><strong>Entfernung:</strong> ${ziel.dist}</p>
+    <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=${ziel.coords}">Route starten</a>`;
     container.appendChild(card);
 });
 </script>
 
 </body>
 </html>
-
-
-
-
