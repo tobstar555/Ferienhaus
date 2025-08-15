@@ -5,57 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferienhaus Lussevika – Ausflugsziele</title>
     <style>
-    /* Grundlegendes Styling für die Seite */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f9f9f9; /* helles Hintergrund für die Seite */
-    }
+        /* Grundlegendes Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
 
-    /* Header-Bereich */
-    header {
-        background-color: #0073e6; /* Blau wie der Button */
-        color: white;
-        padding: 30px 20px;
-        text-align: center;
-    }
+        /* Header */
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
 
-    header h1 {
-        margin: 0;
-        font-size: 2.5em; /* Überschrift etwas größer */
-    }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
 
-    /* Navigation */
-    nav {
-        background-color: #0073e6; /* gleiche Farbe wie der Button */
-        padding: 15px 20px;
-        text-align: center;
-    }
+        /* Navigation */
+        nav {
+            background-color: #0073e6;
+            padding: 15px 20px;
+            text-align: center;
+        }
 
-    nav a {
-        color: white;             /* Links in Weiß */
-        margin: 0 15px;           /* Abstand zwischen den Links */
-        text-decoration: none;    /* keine Unterstreichung */
-        font-weight: bold;
-        font-size: 1.1em;
-        transition: background 0.3s, color 0.3s; /* sanfter Hover-Effekt */
-        padding: 8px 12px;
-        border-radius: 5px;
-    }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background 0.3s, color 0.3s;
+            padding: 8px 12px;
+            border-radius: 5px;
+            display: inline-block;
+        }
 
-    nav a:hover {
-        background-color: #005bb5; /* dunkleres Blau beim Drüberfahren */
-        color: #ffd700;             /* Goldene Schrift beim Hover */
-    }
+        nav a:hover {
+            background-color: #005bb5;
+            color: #ffd700;
+        }
 
-    .card { border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; }
-    .card img { max-width: 100%; height: auto; }
-    .btn, .social-btn { display: inline-block; margin-top: 10px; padding: 8px 12px; background: #0073e6; color: white; text-decoration: none; border-radius: 4px; }
-    .social-btn img { width: 20px; vertical-align: middle; margin-right: 5px; }
-    iframe { width: 100%; height: 400px; border: 0; }
-</style>
+        nav select {
+            margin-left: 20px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1em;
+        }
 
+        /* Container für Inhalte */
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            color: #0073e6;
+            margin-bottom: 15px;
+        }
+
+        /* Karten / Ziele */
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin: 10px 0 5px;
+            color: #0073e6;
+        }
+
+        .card p {
+            margin: 5px 0;
+        }
+
+        /* Buttons */
+        .btn, .social-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background-color: #0073e6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover, .social-btn:hover {
+            background-color: #005bb5;
+        }
+
+        .social-btn img {
+            width: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Kleine Anpassungen für Text */
+        p.socialText {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
@@ -81,11 +158,10 @@
     <p id="introText">Hier findest du unsere liebsten Ausflugsziele rund um das Ferienhaus. Klicke auf „Route starten“, um direkt die Navigation auf deinem Smartphone zu öffnen.</p>
 </div>
 
-<!-- Sehenswürdigkeiten -->
 <div class="container" id="ziele">
     <h2 id="zieleTitle">Sehenswürdigkeiten in der Nähe</h2>
 
-    <!-- Ziel 1 statisch -->
+    <!-- Ziel 1 -->
     <div class="card">
         <img src="bilder/avik_kystfort.jpg" alt="Åvik kystfort">
         <h3 id="ziel1Title">Åvik kystfort</h3>
@@ -94,17 +170,15 @@
         <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=58.0341,7.21365" id="route1">Route starten</a>
     </div>
 
-    <!-- Ziel 2-15 automatisch -->
+    <!-- Weitere Ziele -->
     <div id="zieleContainer"></div>
 </div>
 
-<!-- Karte -->
 <div class="container" id="karte">
     <h2 id="mapTitle">Alle Ziele auf der Karte</h2>
     <iframe src="https://www.google.com/maps/d/embed?mid=1xqvlbK2Qcq7i4pJgq9pKM_4fEE9yHws&ehbc=2E312F&noprof=1"></iframe>
 </div>
 
-<!-- Social Media Links -->
 <div class="container" id="social">
     <h2 id="socialTitle">Folge uns</h2>
     <p id="socialText">Besuche uns auf unseren Social-Media-Kanälen:</p>
@@ -123,7 +197,6 @@
     </a>
 </div>
 
-<!-- Buchung -->
 <div class="container" id="buchung">
     <h2 id="bookingTitle">Buchung</h2>
     <p id="bookingText">Die Buchung erfolgt über die Vermittlungsseite von Novasol:</p>
@@ -203,28 +276,18 @@ const weitereZiele = [
     {img:"bilder/ziel14.jpg", alt:"Lysefjord", title:"Lysefjord", text:"Der Lysefjord ist ein spektakulärer Fjord in Südnorwegen, umgeben von steilen Felswänden, Wasserfällen und bekannten Wanderzielen wie Preikestolen und Kjerag.", dist:"ca. 200 km", coords:"59.04584,6.65137"},
     {img:"bilder/ziel15.jpg", alt:"Lysevegen", title:"Lysevegen", text:"Die Lysevegen ist eine eindrucksvolle Serpentinenstraße in Südnorwegen, die Besucher mit spektakulären Ausblicken auf den Lysefjord und die umliegende Berglandschaft belohnt.", dist:"ca. 200km", coords:"59.04584,6.65137"}
 ];
-
 const container = document.getElementById("zieleContainer");
 weitereZiele.forEach((ziel, i) => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-        <img src="${ziel.img}" alt="${ziel.alt}">
-        <h3>${ziel.title}</h3>
-        <p>${ziel.text}</p>
-        <p><strong>Entfernung:</strong> ${ziel.dist}</p>
-        <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=${ziel.coords}">Route starten</a>
-    `;
-    container.appendChild(card);
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `<img src="${ziel.img}" alt="${ziel.alt}">
+                     <h3>${ziel.title}</h3>
+                     <p>${ziel.text}</p>
+                     <p><strong>Entfernung:</strong> ${ziel.dist}</p>
+                     <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=${ziel.coords}">Route starten</a>`;
+    container.appendChild(div);
 });
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
