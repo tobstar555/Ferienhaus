@@ -14,15 +14,33 @@
             color: #333;
         }
 
-        /* Header */
+        /* Header mit Hintergrundbild */
         header {
-            background-color: #0073e6;
+            position: relative;
+            background-image: url("bilder/haus_front.jpg"); /* HIER dein Bild einsetzen */
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 30px 20px;
             text-align: center;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Halbtransparente Ebene vor dem Bild */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 115, 230, 0.6); /* Blau halbtransparent */
+            z-index: 1;
         }
 
         header h1 {
+            position: relative;
+            z-index: 2;
             margin: 0;
             font-size: 2.5em;
         }
@@ -291,6 +309,7 @@ weitereZiele.forEach((ziel, i) => {
 
 </body>
 </html>
+
 
 
 
